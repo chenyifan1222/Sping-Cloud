@@ -1,0 +1,32 @@
+server:
+  port: 8801
+
+spring:
+  application:
+    name: cloud-payment-service
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type:
+            enviroment:
+              spring:
+                rabbit:
+                  host: 47.101.165.188
+                  port: 5672
+                  username: guest
+                  password: guest
+      bindings:
+        output:
+          destination: studyExchange
+          content-type:
+            binder: defaultRabbit
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: c
+    prefer-ip-address: true    # 访问路劲可以显示ip地址
+

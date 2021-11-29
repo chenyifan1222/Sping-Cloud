@@ -1,0 +1,21 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway-9527
+  cloud:
+    gateway:
+      routes:
+        - id: payment_route   # 路由id
+          uri: https://localhost:8001   # 匹配后路由的服务地址
+          predicates:
+            - Path = /payment/**
+eureka:
+  client:
+    register-with-eureka: true   #表示将自己注册进eureka服务端
+    fetch-registry: true        #是否从eureka服务端抓取自己的注册信息，默认true  集群必须设置true才能配合ribbon使用负载均衡
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+
+

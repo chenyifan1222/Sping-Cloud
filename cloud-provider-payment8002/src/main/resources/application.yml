@@ -1,0 +1,34 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    # 当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    #mysql 驱动包
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/redis_lock?useUnicode=true&characterEncoding=utf8&useSSL=true
+    username: root
+    password: root123
+    druid:
+      max-active: 30
+      max-wait: 60000
+      pool-prepared-statements: false
+      validation-query: SELECT 1
+
+eureka:
+  client:
+    register-with-eureka: true   #表示将自己注册进eureka服务端
+    fetch-registry: true        #是否从eureka服务端抓取自己的注册信息，默认true  集群必须设置true才能配合ribbon使用负载均衡
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: payment8002
+    prefer-ip-address: true    # 访问路劲可以显示ip地址
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.payment.entity
+
