@@ -22,6 +22,11 @@
         <module>cloud-gateway-9527</module>
         <module>cloud-config-3344</module>
         <module>cloud-stream-provider8801</module>
+        <module>cloud-stream-consumer8802</module>
+        <module>cloud-nacos-provider-9901</module>
+        <module>cloud-nacos-consumer-9902</module>
+        <module>cloud-nacos-config-3377</module>
+        <module>cloudaibaba-sentinel-service8401</module>
     </modules>
 
     <!-- 统一管理jar 版本-->

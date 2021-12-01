@@ -4,23 +4,20 @@ server:
 spring:
   application:
     name: cloud-payment-service
+  rabbitmq:
+    host: 47.101.165.188
+    port: 5672
+    username: guest
+    password: guest
   cloud:
     stream:
-      binders:
-        defaultRabbit:
-          type:
-            enviroment:
-              spring:
-                rabbit:
-                  host: 47.101.165.188
-                  port: 5672
-                  username: guest
-                  password: guest
       bindings:
         output:
           destination: studyExchange
           content-type:
             binder: defaultRabbit
+
+
 
 eureka:
   client:
