@@ -1,0 +1,8 @@
+springboot 自动专配流程？
+
+springboot启动的时候，会找到@springbootApplication这个注解下的@EnableAutoConfiguration
+
+里面的@Import注解，ConfigurationClassParser这个类中parse方法来处理我们的@Import这个注解，获取里面的AutoConfigurationImportSelector.class,在这个类有一个重要的方法 `getCandidateConfigurations`.用于加载 Spring Boot 配置的自动配置类。
+
+获取我们meta/inf 下面spring.factories里面的类的全限定名加载到我们spring容器里面，这就是springboot 自动装配的基本过程
+
