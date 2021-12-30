@@ -27,6 +27,8 @@
         <module>cloud-nacos-consumer-9902</module>
         <module>cloud-nacos-config-3377</module>
         <module>cloudaibaba-sentinel-service8401</module>
+        <module>cloud-rabbitmq</module>
+        <module>cloud-rabbitmq-consumer</module>
     </modules>
 
     <!-- 统一管理jar 版本-->

@@ -1,0 +1,24 @@
+server:
+  port: 5672
+
+spring:
+  application:
+    name: cloud-rabbitmq
+  rabbitmq:
+    addresses: 47.101.165.188
+    port: 5672
+    username: admin
+    password: admin
+
+
+eureka:
+  client:
+    register-with-eureka: true   #表示将自己注册进eureka服务端
+    fetch-registry: true        #是否从eureka服务端抓取自己的注册信息，默认true  集群必须设置true才能配合ribbon使用负载均衡
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: cloud-rabbitmq
+    prefer-ip-address: true    # 访问路劲可以显示ip地址
+
+
