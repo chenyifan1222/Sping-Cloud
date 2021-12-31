@@ -1,0 +1,33 @@
+server:
+  port: 5673
+
+spring:
+  application:
+    name: cloud-rabbitmq-consumer
+  rabbitmq:
+    addresses: 47.101.165.188
+    port: 5672
+    username: admin
+    password: admin
+    listener:
+      direct:
+        acknowledge-mode: auto
+      simple:
+        retry:
+          enabled: true  # 开启消费者失败重试
+          initial-interval: 3000ms # 初识的失败等待时长为1秒
+          ultiplier: 1 # 失败的等待时长倍数，下次等待时长 = multiplier * last-interval
+          max-attempts: 3 # 最大重试次数
+          stateless: true # true无状态；false有状态。如果业务中包含事务，这里改为false
+
+eureka:
+  client:
+    register-with-eureka: true   #表示将自己注册进eureka服务端
+    fetch-registry: true        #是否从eureka服务端抓取自己的注册信息，默认true  集群必须设置true才能配合ribbon使用负载均衡
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: cloud-rabbitmq
+    prefer-ip-address: true    # 访问路劲可以显示ip地址
+
+

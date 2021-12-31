@@ -32,6 +32,8 @@
         <module>cloud-seata-storage</module>
         <module>cloud-kafka</module>
         <module>java-juc</module>
+        <module>cloud-rabbitmq</module>
+        <module>cloud-rabbitmq-consumer</module>
     </modules>
 
     <!-- 统一管理jar 版本-->
