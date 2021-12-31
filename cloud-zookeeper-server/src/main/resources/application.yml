@@ -1,0 +1,10 @@
+server:
+  port: 8898
+
+spring:
+  application:
+    name: cloud-zookeeper-server
+  cloud:
+    zookeeper:
+      connect-string: 47.101.165.188:2181
+

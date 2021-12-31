@@ -27,6 +27,11 @@
         <module>cloud-nacos-consumer-9902</module>
         <module>cloud-nacos-config-3377</module>
         <module>cloudaibaba-sentinel-service8401</module>
+        <module>cloud-zookeeper-server</module>
+        <module>cloud-seata-order</module>
+        <module>cloud-seata-storage</module>
+        <module>cloud-kafka</module>
+        <module>java-juc</module>
     </modules>
 
     <!-- 统一管理jar 版本-->

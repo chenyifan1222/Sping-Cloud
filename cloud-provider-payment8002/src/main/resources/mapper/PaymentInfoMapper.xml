@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.payment.mapper.PaymentInfoMapper">
+
+    <resultMap id="BaseResult" type="com.cloud.kavin.entity.PaymentInfo">
+        <id column="id"  property="id" />
+        <id column="info"  property="info" />
+    </resultMap>
+
+    <select id="getUserById" parameterType="Long" resultType="com.cloud.kavin.entity.PaymentInfo">
+        select * from `payment_info` where id = #{id}
+    </select>
+
+    <insert
+            id="saveUser" parameterType="com.cloud.kavin.entity.PaymentInfo"
+            useGeneratedKeys="true">
+        insert into payment_info (name) values (#{name})
+    </insert>
+</mapper>
