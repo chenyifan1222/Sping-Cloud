@@ -70,4 +70,7 @@ public class PaymentRest {
         }
         return serverPort;
     }
+
+    public void testGit(){
+    }
 }
